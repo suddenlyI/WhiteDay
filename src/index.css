@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Gowun Dodum", ui-sans-serif, system-ui, sans-serif;
+}
