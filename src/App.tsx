@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'motion/react';
 import { Heart, X, User, HeartPulse } from 'lucide-react';
+import profileImg from './assets/profile.jpg';
 
 export default function App() {
   const [screen, setScreen] = useState<'intro' | 'main'>('intro');
@@ -142,7 +143,7 @@ function MainScreen() {
           {/* Profile Image */}
           <div className="w-full h-[55%] bg-gray-200 flex items-center justify-center relative overflow-hidden">
             <img 
-              src="/profile.jpg" 
+              src={profileImg} 
               alt="Profile" 
               className="w-full h-full object-cover object-bottom pointer-events-none"
               referrerPolicy="no-referrer"
