@@ -30,8 +30,8 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
     >
       {/* Header */}
       <div className="absolute top-12 w-full p-8 flex justify-center items-center z-10">
-        <h1 className="text-center leading-relaxed">
-          <span className="text-white text-5xl tracking-wide [text-shadow:0_3px_0_#f472b6,0_6px_8px_rgba(0,0,0,0.15)]">
+        <h1 className="text-center leading-[0.85]">
+          <span className="text-white text-[50px] tracking-wide [text-shadow:0_3px_0_#f472b6,0_6px_8px_rgba(0,0,0,0.15)]">
             <span className="relative inline-block">
               WhiteDay<span className="absolute left-full drop-shadow-sm">🍬</span>
             </span>
@@ -52,7 +52,7 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="flex gap-4 drop-shadow-lg"
+          className="flex gap-4 drop-shadow-lg mt-20"
         >
           <img 
             src="https://i.pinimg.com/originals/29/57/f7/2957f7c7d2ef62de281dac2765bb7acb.gif" 
@@ -65,9 +65,12 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
       <motion.div
         animate={{ opacity: [0.4, 1, 0.4] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        className="pb-24 text-pink-600 font-bold text-xl tracking-wide drop-shadow-sm"
+        className="pb-24 text-pink-600 font-bold text-[22px] tracking-wide drop-shadow-sm text-center"
       >
-        화면을 터치해서 시작해보세요 👆
+        <span className="relative inline-block">
+          화면을 터치해서 시작해보세요
+          <span className="absolute left-full ml-1">👆</span>
+        </span>
       </motion.div>
     </motion.div>
   );
@@ -129,7 +132,7 @@ function MainScreen() {
               initial={{ opacity: 0, y: -20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.9 }}
-              className="bg-red-500 text-white px-6 py-3 rounded-full shadow-lg font-medium text-sm text-center max-w-[85%] mx-auto"
+              className="bg-red-500 text-white px-6 py-3 rounded-full shadow-lg font-medium text-[16px] text-center max-w-[85%] mx-auto"
             >
               {toastMessage}
             </motion.div>
@@ -159,7 +162,7 @@ function MainScreen() {
             />
             
             {/* Status Badge */}
-            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-bold text-pink-600 flex items-center gap-2 shadow-sm">
+            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[14px] font-bold text-pink-600 flex items-center gap-2 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
               화이트데이 데이트 로딩 중 💻
             </div>
@@ -168,14 +171,14 @@ function MainScreen() {
           {/* Profile Info */}
           <div className="p-6 flex-1 flex flex-col bg-white">
             <div className="flex items-end gap-2 mb-1">
-              <h2 className="text-3xl font-extrabold text-gray-800">양춘봉</h2>
-              <span className="text-gray-400 font-medium mb-1 text-lg">28</span>
+              <h2 className="text-[32px] font-extrabold text-gray-800">양춘봉</h2>
+              <span className="text-gray-400 font-medium mb-1 text-[20px]">28</span>
             </div>
-            <p className="text-pink-500 font-bold text-sm mb-4">
+            <p className="text-pink-500 font-bold text-[16px] mb-4">
               직업 : 오늘만 개발자
             </p>
             <div className="bg-pink-50/50 rounded-2xl p-4 flex-1 border border-pink-100/50">
-              <p className="text-gray-700 text-sm leading-relaxed font-medium break-keep">
+              <p className="text-gray-700 text-[16px] leading-relaxed font-medium break-keep">
                 "오늘 하루, 당신만을 위한 전담 개발자가 되어드립니다. 성공적인 화이트데이 데이트를 위해 얌전히 하트를 누르시오."
               </p>
             </div>
@@ -225,12 +228,12 @@ function SuccessModal() {
         transition={{ type: "spring", bounce: 0.5 }}
         className="bg-white rounded-3xl p-8 max-w-[85%] text-center shadow-2xl relative z-10 border-4 border-pink-200"
       >
-        <div className="text-6xl mb-6 drop-shadow-md">😈💖</div>
-        <h2 className="text-2xl font-extrabold text-pink-600 mb-4 break-keep">걸려들었다!</h2>
-        <p className="text-gray-700 font-medium leading-relaxed break-keep">
+        <div className="text-[62px] mb-6 drop-shadow-md">😈💖</div>
+        <h2 className="text-[26px] font-extrabold text-pink-600 mb-4 break-keep">걸려들었다!</h2>
+        <p className="text-gray-700 text-[18px] font-medium leading-relaxed break-keep">
           이제 환불 및 예약 취소는 불가능합니다.<br/>
           넌 도망 못 가<br/><br/>
-          <span className="font-bold text-pink-500 text-lg">해피 화이트데이 🍬</span>
+          <span className="font-bold text-pink-500 text-[20px]">해피 화이트데이 🍬</span>
         </p>
       </motion.div>
     </motion.div>
@@ -248,7 +251,7 @@ function HeartParticles() {
         return (
           <motion.div
             key={i}
-            className="absolute text-2xl drop-shadow-sm"
+            className="absolute text-[26px] drop-shadow-sm"
             initial={{
               left: `${left}%`,
               top: '-10%',
