@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'motion/react';
 import { Heart, X, User, HeartPulse } from 'lucide-react';
-import profileImg from './assets/profile.jpg';
 
 export default function App() {
   const [screen, setScreen] = useState<'intro' | 'main'>('intro');
@@ -30,10 +29,15 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
       {/* Header */}
-      <div className="absolute top-0 w-full p-8 flex justify-center items-center z-10">
-        <h1 className="text-pink-500 font-extrabold text-4xl flex items-center gap-3 drop-shadow-md tracking-tight">
-          <span>🍬</span>
-          WhiteDay Match
+      <div className="absolute top-12 w-full p-8 flex justify-center items-center z-10">
+        <h1 className="text-center leading-relaxed">
+          <span className="text-white text-5xl tracking-wide [text-shadow:0_3px_0_#f472b6,0_6px_8px_rgba(0,0,0,0.15)]">
+            <span className="relative inline-block">
+              WhiteDay<span className="absolute left-full drop-shadow-sm">🍬</span>
+            </span>
+            <br />
+            Match
+          </span>
         </h1>
       </div>
 
@@ -48,15 +52,20 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="text-7xl flex gap-4 drop-shadow-lg"
+          className="flex gap-4 drop-shadow-lg"
         >
-          <span>💖</span>
+          <img 
+            src="https://i.pinimg.com/originals/29/57/f7/2957f7c7d2ef62de281dac2765bb7acb.gif" 
+            alt="Cute GIF" 
+            className="w-32 h-32 object-contain rounded-2xl"
+            referrerPolicy="no-referrer"
+          />
         </motion.div>
       </div>
       <motion.div
         animate={{ opacity: [0.4, 1, 0.4] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        className="pb-24 text-pink-600 font-bold text-lg tracking-wide drop-shadow-sm"
+        className="pb-24 text-pink-600 font-bold text-xl tracking-wide drop-shadow-sm"
       >
         화면을 터치해서 시작해보세요 👆
       </motion.div>
@@ -143,7 +152,7 @@ function MainScreen() {
           {/* Profile Image */}
           <div className="w-full h-[55%] bg-gray-200 flex items-center justify-center relative overflow-hidden">
             <img 
-              src={profileImg} 
+              src="/profile.jpg" 
               alt="Profile" 
               className="w-full h-full object-cover object-bottom pointer-events-none"
               referrerPolicy="no-referrer"

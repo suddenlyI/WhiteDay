@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@font-face {
+    font-family: 'MitmiFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Gowun Dodum", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "MitmiFont", ui-sans-serif, system-ui, sans-serif;
 }
